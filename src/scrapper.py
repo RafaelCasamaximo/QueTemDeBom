@@ -8,13 +8,13 @@ class Scrapper:
         pass
 
     def getCardapioImageURL(self):
-        htmldata = self.getdata("http://www.uel.br/ru/pages/cardapio.php") 
+        htmldata = self.getData("http://www.uel.br/ru/pages/cardapio.php") 
         soup = BeautifulSoup(htmldata, 'html.parser') 
         allImages = soup.find_all('img')
         cardapioImage = allImages[5]['src']
         return cardapioImage
 
-    def getdata(self, url): 
+    def getData(self, url): 
         r = requests.get(url) 
         return r.text 
         
