@@ -1,7 +1,6 @@
 import cv2
 import PIL
 import numpy
-import notify2
 import pytesseract as tes
 from datetime import datetime
 

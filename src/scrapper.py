@@ -19,6 +19,6 @@ class Scrapper:
         return r.text 
         
     def getImageFromURL(self, url):
-        urllib.request.urlretrieve(url, "cardapio.png")
-        return Image.open("cardapio.png")
+        urllib.request.urlretrieve(url, "./assets/cardapio.png")
+        return Image.open("./assets/cardapio.png")
     
