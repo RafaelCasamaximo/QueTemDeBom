@@ -1,21 +1,36 @@
-from scrapper import Scrapper
-from imageProcessor import ImageProcessor
-from notifier import Notifier
-
+from scrapping import Scrapping
+from interface import Interface
+from datetime import date
+import pprint
 
 def main():
-    scrapper = Scrapper()
-    cardapioUrl = scrapper.getCardapioImageURL()
-    cardapioImg = scrapper.getImageFromURL(cardapioUrl)
+    scrapping = Scrapping()
+    cardapio = scrapping.completeCardapio
 
-    imageProcessor = ImageProcessor()
-    cardapioPorDiaTxt = imageProcessor.process(cardapioImg)
-
-    notifier = Notifier()
-    notifier.notificaCardapioDoDia(cardapioPorDiaTxt)
-
+    # pprint.pprint(cardapio)    
+    interface = Interface('O que tem de bom hoje? ' + getDiaDaSemana())
+    interface.populateText(convertToPrettyText(cardapio[getDiaDaSemana()]))
+    interface.start()
     pass
 
-if __name__ == '__main__':
+def getDiaDaSemana():
+    sem = ["Segunda-Feira", "Terça-Feira", "Quarta-Feira", "Quinta-Feira", "Sexta-Feira"]
+    num = date.today().weekday()
+    return sem[num]
+
+
+def convertToPrettyText(cardapioDoDia):
+    prettyText = ''
+    for item in cardapioDoDia:
+        prettyText += item['Alimento'] + '\n'
+        for tag in item['Tags']:
+            prettyText += tag + '\n'
+        prettyText += '\n\n'
+
+        
+    return prettyText
+
+if __name__ == "__main__":
     main()
+    pass
 

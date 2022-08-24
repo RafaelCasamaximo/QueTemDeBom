@@ -6,21 +6,16 @@ As aulas presenciais voltaram na UEL e o RU também. Isso cria uma dúvida na no
 
 Por conta disso eu criei um script em Python que:
 - Faz a requisição do cardápio do dia no site do RU - UEL;
-- Salva a imagem localmente;
-- Recorta a imagem em 5 partes (cada dia da semana);
-- Converte a imagem do cardápio de cada dia em texto;
-- Envia uma notificação para o sistema operacional com o conteúdo;
+- Mostra em uma janela o cardapio do dia!
 
 ## Como instalar
 
 - É necessário Python 3 sou superior;
-- Todos os requerimentos do python estão em `requirements.txt`, para instalar eles use `pip install -r requirements.txt`;
-- Instalar [PyTesseract](https://tesseract-ocr.github.io/);
-- Para melhor reconhecimento do texto é necessário [instalar o treinamento de linguagem em português](https://github.com/tesseract-ocr/tessdata/blob/main/por.traineddata);
-- Por fim, é necessário adicionar o script ao startup do sistema. Isso pode ser feito através da GUI do Gnome ou também através dos [scripts de startup](https://smallbusiness.chron.com/adobe-creative-cloud-grow-business-13771091.html); 
+- Todos os requerimentos do python estão em `requirements.txt`, para instalar eles use `pip install -r requirements.txt` (O ARQUIVO FOI ALTERADO APÓS A ÚLTIMA ATUALIZAÇÃO);
+- É necessário adicionar o script ao startup do sistema. Isso pode ser feito através da GUI do Gnome ou também através dos [scripts de startup](); 
 
 ## Como executar
-- O comando para executar o script é `python3 main.py`. Isso enviará uma notificação para o sistema contendo as informações do cardápio do dia do RU - UEL;
+- O comando para executar o script é `python3 main.py`. Isso abrirá uma janela contendo as informações do cardápio do dia do RU - UEL;
 
 ## TODOs
 - Adicionar suporte para Windows;
