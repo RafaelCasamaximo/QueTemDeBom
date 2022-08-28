@@ -11,6 +11,12 @@ class Interface:
         # self.root.minsize(500, 500)
         pass
 
+    def populateImage(self, content):
+        self.imagem = Label(self.root, text = "Cardápio do dia", image = content)
+        self.imagem.image = content
+        self.imagem.pack()
+        pass
+
     def populateText(self, content):
         text = Label(self.root, text=content, width=100, height=100)
         text.pack()

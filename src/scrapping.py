@@ -57,12 +57,12 @@ class Scrapping:
     def filterParagraphFromCardapio(self, paragraph):
 
         tagsEnum = {
-            'Origem Animal': 'background-color:rgba(0, 0, 0, 0);color:#f86437',
-            'Opções para Vegetarianos': 'background-color:rgba(0, 0, 0, 0);color:#0acb00',
+            'Contém Lactose, Queijo, Ovo, Origem Animal': 'background-color:rgba(0, 0, 0, 0);color:#f10606',
+            'Opções para Vegetarianos': 'background-color:rgba(0, 0, 0, 0);color:#45cc4b',
             'Contém Molho Shoyu': 'background-color:rgba(0, 0, 0, 0)',
-            'Pode conter Pimenta': 'background-color:rgba(0, 0, 0, 0);color:#ecd000',
-            'Contém Molho de Tomate': 'background-color:rgba(0, 0, 0, 0);color:#e317a3',
-            'Contém Glúten': 'background-color:rgba(0, 0, 0, 0);color:#ce7b08',
+            'Pode conter Pimenta': 'background-color:rgba(0, 0, 0, 0);color:#fde321',
+            'Contém Molho de Tomate': 'background-color:rgba(0, 0, 0, 0);color:#9d06d9',
+            'Contém Glúten': 'background-color:rgba(0, 0, 0, 0);color:#0935d3',
             'Servidos Diariamente': 'background-color:rgba(0, 0, 0, 0);color:#200ae3'
         }
 
@@ -81,7 +81,7 @@ class Scrapping:
                 pass
 
         item = {
-            'Alimento': paragraph.get_text(" ").replace('*','').title(),
+            'Alimento': paragraph.get_text(" ").replace('▄','').title(),
             'Tags': alimentoTags,
         }
         return item
